@@ -1,0 +1,10 @@
+TESTING
+
+Testing occured throughout development, and small functions were tested to build up to testing larger functions. 
+
+The program contains a 'Test Mode' which changes the behavior of errors, such that errors that typically trigger exit() instead return a false value, to allow for assertions. Exceptions to this are errors caused by incorrect use of brackets or semi-colons - these errors always hault the program and are commented out in the tests. 
+
+All the basic functions shared by both the parser and interpeter are tested in test.c/h, and overall program function is tested with a series of simlple programs. 
+
+The BST, SDL, evaluation, turtle apsects and graphics are tested in bst_test.c/h, as are the rejection of grammatically correct but illogical polish expressions in test_eval_polish(). Testing of all important functions is done without visual aid, but afterwards visual tests were made for verification (2 are included).
+

@@ -1,0 +1,41 @@
+{
+   SPEED 0
+   HEADING RIGHT
+   DO A FROM 0 TO 500 
+   {
+      COLOR 150 , A , A , 255
+      SET B := A A + ;
+      FD A
+      LT 90
+      IF A < 200 
+      {
+         RECT A , A
+      }
+      IF A > 200
+      {
+         RECT A , B 
+      }
+   }
+   POS CENTER
+   COLOR 150 , A , A , 255
+   SET B := 11 5 * ;
+
+   DO C FROM 0 TO 200
+   {
+      RECT C , C FILL
+      FD C
+      RT 20
+      COLOR C , C , 150 , C
+   }
+
+   POS CENTRE
+   DO D FROM 0 TO 500
+   {
+      RECT D , D
+      FD D
+      RT D
+      COLOR D , D , 150 , D
+   }
+ 
+   RECT 20 , 40 FILL
+}

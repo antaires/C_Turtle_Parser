@@ -1,0 +1,24 @@
+{
+SPEED 0
+
+POS CENTER
+COLOR 255 , 229 , 84 , 150
+RECT 500 , 500 FILL
+COLOR 255 , 229 , 84 , 250
+RECT 450 , 450 FILL
+
+DO a_nt FROM 1 TO 20
+  {
+   POS CENTER
+   SET beta := a_nt 10 * a_nt + ;
+   SET C := beta a_nt * ;
+   COLOR a_nt , C , a_nt , beta
+   FD beta
+   RECT beta , a_nt
+   DO X FROM 1 TO 50 { RT beta FD beta COLOR C , a_nt , C , beta  }
+   LT 90
+   DO C FROM 1 TO 50 { FD a_nt RT C }
+   IF a_nt < 30 { RECT a_nt , beta }
+  }
+}
+

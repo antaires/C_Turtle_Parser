@@ -1,0 +1,22 @@
+Turtle Parser/Interpeter Notes:
+Parser is "./parse filename.txt" and Interpreter is "./interp filename.txt"
+
+DESIGN
+The overall design used ADTs for the stack, symbol table (a linked list for the parser and BST for the interpreter), and program structure (which stores the program as a linked list to allow any size programs). For the interp, the prog has been expanded to also store the SDL/graphics aspects and turtle information. Small functions allow access to all necessary aspects of the structures. 
+
+Stack.c is shared between parser and interp, but prog.c is only for the interp because of the graphic additions (parse.c contains all the simplified prog functions for parser). 
+
+PARSER
+The parser has some grammar extensions: If, Speed, Heading, Position, Draw Rectangle, and set Color. The parser uses the symbol table purely for warnings, and warns users of undefined or unused variables (but parses them OK). Warnings are also printed if the user has input illogical values to DO. 
+
+Further, animation of the program is possible by changing the speed of the turtle to a number larger than 0 (large numbers are best) as it introduces delay in the SDL drawings.
+
+INTERPRETER
+The Interpreter uses a BST to accept any valid C variable names, within a max length given at initialisation. Keywords (such as SET, DO etc) are rejected for variable names.
+
+All extensions are added into the single interp.c file. The only change from this interp.c and a standard version in terms of the programs it accepts are that it will accept any legal C-type variable names, rather than just single letters. 
+
+EXAMPLE PROGRAMS
+Example programs are uploaded to illustrate some of the extensions:
+   interp: test1.txt test2.txt
+   parser: test1.txt 
